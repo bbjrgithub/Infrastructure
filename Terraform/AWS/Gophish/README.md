@@ -2,21 +2,25 @@
 
 Gophish installed on in a container on an EC2 instance in an ASG.
 
-###Usage
+### Usage
 
-\- Connect to instance using System Manager Session Manager.
+- Connect to instance using System Manager Session Manager.
 
-\- After instance is running change Ingress rules in Security Group to allow desired IP/CIDR to access to admin Console.
+- After instance is running change Ingress rules in Security Group to allow desired IP/CIDR to access to admin Console.
 &nbsp;
 &nbsp;
 
-###Features
+### Features
 
-\- Gophish is installed in a container.
+- Gophish is installed in a container.
 
-\- The latest Amazon Linux 2023 Minimal AMI is used for the Gophish instance.
+- The initial admin password for Gophish is in the container logs:
 
-\- The Gophish instance is not accessible via SSH; only the System Manager Session Manager can be used.
+      $ grep admin /var/lib/docker/containers/<ID>/<ID>-json.log
+
+- The latest Amazon Linux 2023 Minimal AMI is used for the Gophish instance.
+
+- The Gophish instance is not accessible via SSH; only the System Manager Session Manager can be used.
 
 
 
